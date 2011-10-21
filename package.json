@@ -9,6 +9,6 @@
     , "stitch": "*"
   }, 
     "devDependencies": {
-      "jasmine-node": "*"
+      "vows": "*"
     }
 }
