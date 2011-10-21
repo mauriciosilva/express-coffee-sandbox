@@ -1,5 +1,5 @@
 {
-    "name": "express-coffee2"
+    "name": "express-coffee-sandbox"
   , "version": "0.0.1"
   , "private": true
   , "dependencies": {
