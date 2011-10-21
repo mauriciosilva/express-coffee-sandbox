@@ -27,13 +27,14 @@ app.get "/application.js", package.createServer()
 
 app.get "/", (req, res) ->
   res.render "index",
-    title: "Express-Coffee2"
+    title: "Express-Coffee-Sandbox"
 
 app.get "/about", (req, res) ->
   res.render "about",
-    title: "Express-Coffee2"
+    title: "Express-Coffee-Sandbox"
 
 app.listen process.env.PORT or process.env.C9_PORT or 3000
+
 console.log "Express server listening on port %d in %s mode", app.address().port, app.settings.env
 
 
