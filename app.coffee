@@ -1,9 +1,16 @@
 stitch = require "stitch"
 express = require("express")
+Facebook = require('./lib/facebook')
 
 package = stitch.createPackage({
   paths: [__dirname + '/src/client', __dirname + '/src/vendor']
 });
+
+facebook = new Facebook
+console.log facebook.message
+
+
+  
 
 app = module.exports = express.createServer()
 app.configure ->
@@ -28,6 +35,7 @@ app.get "/application.js", package.createServer()
 app.get "/", (req, res) ->
   res.render "index",
     title: "Express-Coffee-Sandbox"
+    cs_value: "testing"
 
 app.get "/about", (req, res) ->
   res.render "about",
