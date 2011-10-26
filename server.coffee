@@ -26,6 +26,7 @@ app.get "/auth", (req, res) ->
     authUrl = graph.getOauthUrl(
       client_id: config.app_id
       redirect_uri: config.redirect_uri
+      scope: config.scope
     )
     res.redirect authUrl
     return
@@ -42,11 +43,14 @@ app.get "/auth", (req, res) ->
 app.get "/", (req, res) ->
   res.render "index",
     title: "Facebook-Sandbox"
+    app_id: config.app_id
     cs_value: "testing"
+    
 
 app.get "/welcome", (req, res) -> 
   res.render "index",
     title: "Facebook-Sandbox"
+    app_id: config.app_id
     cs_value: "you are logged, yo"
   
 

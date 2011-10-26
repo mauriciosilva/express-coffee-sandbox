@@ -30,8 +30,7 @@ body
   :coffeescript
     window.fbAsyncInit = ->
       FB.init
-        appId: "YOUR_APP_ID"
-        channelURL: "//WWW.YOUR_DOMAIN.COM/channel.html"
+        appId: "!{app_id}"
         status: true
         cookie: true
         oauth: true
@@ -49,7 +48,7 @@ body
     ) document
 
 
-
+  .fb-login-button
   != body
   script(type='text/javascript', src='/application.js')
   script(type='text/javascript', src='http://cdnjs.cloudflare.com/ajax/libs/jquery/1.6.4/jquery.min.js')
