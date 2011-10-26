@@ -9,12 +9,12 @@ console.log 'testing units'
 vows
   .describe('facebook unit tests')
   .addBatch
-    'before we do anything we need config settings':
+    'before we do anything we need config':
       topic: () ->
          return config
       'should have a app_id': () -> 
         assert.isNotNull config.app_id
       'and should have a secret key': () => 
-        assert.isNotNull config.secret  
+        assert.isNotnull config.secret  
   .export(module)
 

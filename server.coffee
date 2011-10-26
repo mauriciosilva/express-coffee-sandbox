@@ -36,14 +36,18 @@ app.get "/auth", (req, res) ->
     code: req.query.code
   , (err, facebookRes) ->
     console.log facebookRes
-    res.redirect "/"
+    res.redirect "/welcome"
 
 
 app.get "/", (req, res) ->
   res.render "index",
-    title: "Express-Coffee-Sandbox"
+    title: "Facebook-Sandbox"
     cs_value: "testing"
 
+app.get "/welcome", (req, res) -> 
+  res.render "index",
+    title: "Facebook-Sandbox"
+    cs_value: "you are logged, yo"
   
 
 port = process.env.PORT || 3000

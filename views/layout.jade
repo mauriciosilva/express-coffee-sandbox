@@ -26,6 +26,30 @@ head
     body { padding-top: 60px; }
 
 body
+  #fb-root
+  :coffeescript
+    window.fbAsyncInit = ->
+      FB.init
+        appId: "YOUR_APP_ID"
+        channelURL: "//WWW.YOUR_DOMAIN.COM/channel.html"
+        status: true
+        cookie: true
+        oauth: true
+        xfbml: true
+
+    ((d) ->
+      js = undefined
+      id = "facebook-jssdk"
+      return  if d.getElementById(id)
+      js = d.createElement("script")
+      js.id = id
+      js.async = true
+      js.src = "//connect.facebook.net/en_US/all.js"
+      d.getElementsByTagName("head")[0].appendChild js
+    ) document
+
+
+
   != body
   script(type='text/javascript', src='/application.js')
   script(type='text/javascript', src='http://cdnjs.cloudflare.com/ajax/libs/jquery/1.6.4/jquery.min.js')
