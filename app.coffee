@@ -6,11 +6,6 @@ package = stitch.createPackage({
   paths: [__dirname + '/src/client', __dirname + '/src/vendor']
 });
 
-facebook = new Facebook
-console.log facebook.message
-
-
-  
 
 app = module.exports = express.createServer()
 app.configure ->
